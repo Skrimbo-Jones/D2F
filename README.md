@@ -21,8 +21,6 @@ Edited To Suit By Skrimbo_Jones
 
  ORIGINAL DESCRIPTION
 
-Edited and Updated to Suit by Skrimbo_Jones
-
  This Program will copy files from the Pictures, Videos, Documents, and Downloads folders on any windows 10 computer
  
  then copy them to the MAXUS drive opened in the Mass Storage App on your Flipper Zero.
