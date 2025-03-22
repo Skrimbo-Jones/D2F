@@ -5,7 +5,7 @@ This program will copy a folder of your choice (Edit the $sourceDirectory variab
 
 NOTE: This could take a long time depending on the files being copied.
 
-Portion of code Authored By: emptythevoid
+Portion Of Code Authored By: emptythevoid
 
 Link: https://github.com/emptythevoid/flipperzero/blob/main/badusb/read-from-flipper-disk-image/wait-for-drive-example.tx
  
