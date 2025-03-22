@@ -8,5 +8,3 @@ NOTE: This could take a long time depending on the files being copied.
 Portion Of Code Authored By: emptythevoid
 
 Link: https://github.com/emptythevoid/flipperzero/blob/main/badusb/read-from-flipper-disk-image/wait-for-drive-example.tx
-
-~Skrimbo_Jones
